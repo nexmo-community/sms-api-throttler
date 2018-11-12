@@ -1,0 +1,25 @@
+{
+  "name": "sms-api-throttler",
+  "version": "0.1.0",
+  "description": "Queue SMS requests to be made against the Nexmo SMS API in order to handle the API throttling rate",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nexmo",
+    "SMS",
+    "throttling",
+    "throughput"
+  ],
+  "author": "phil@leggetter.co.uk",
+  "license": "MIT",
+  "dependencies": {
+    "bottleneck": "^2.13.0",
+    "dotenv": "^6.1.0",
+    "nexmo": "^2.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
