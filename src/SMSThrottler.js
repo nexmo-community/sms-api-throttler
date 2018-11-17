@@ -57,7 +57,7 @@ class SMSThrottler {
         this.droppedCount = 0;
         this.accountLimiter.on('dropped', (dropped) => {
             ++this.droppedCount;
-            console.log('dropped', dropped)
+            this._log('dropped', dropped)
         })
 
     }
@@ -72,6 +72,8 @@ class SMSThrottler {
      */
     queue({from, to, text, callback}) {
         this._log(`queuing "${from}" -> "${to}" "${text}"`, 'limiter count', this.accountLimiter.counts())
+
+        // Ensure limits are tracked on a per-number basis by using a group limiter
         this.numberLimiterGroup.key(from).submit(this._sendSms.bind(this), from, to, text, callback)
     }
 

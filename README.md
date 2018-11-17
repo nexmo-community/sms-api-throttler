@@ -30,10 +30,10 @@ TO_NUMBERS=14155550123,14155550124
 DEBUG=true
 ```
 
-Run the example:
+Run an example:
 
 ```sh
-node example/index.js
+node example/simple-config.js
 ```
 
 ## Example Usage
@@ -87,6 +87,14 @@ new SMSThrottler({
     accountOptions: options,
     numberOptions: options
 })
+```
+
+## Running the tests
+
+The tests including some timing tests so when running the tests timeouts should be disabled:
+
+```sh
+./node_modules/.bin/mocha --no-timeouts
 ```
 
 ## License
